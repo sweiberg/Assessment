@@ -18,10 +18,10 @@ const ProductCard = ( {product} ) => {
                 </div>
 
                 <p className="product-description">{product.description}</p>
-                <div className="product-details">
+                <div className="product-details-container" ref={contentRef} style={{height: viewDetails ? `${contentRef.current?.scrollHeight}px` : '0px'}}>
                     <p className="product-details-description">{product.detailedDescription}</p>
                 </div>
-                <div>
+                <div className="product-button-container">
                     <button onClick={() => setViewDetails(!viewDetails)}>View Details</button>
                     <button onClick={addToCart}>Add to Cart</button>
                 </div>
