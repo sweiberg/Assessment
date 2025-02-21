@@ -9,12 +9,12 @@ const ProductCard = ( {product} ) => {
     };
 
     return (
-        <div> 
+        <div className="product-card"> 
             <img src={product.image} className="product-image"/>
             <div className="product-content"> 
                 <div className="product-header">
                     <h3>{product.name}</h3>
-                    <p>{product.price}</p>
+                    <p className="product-price">{product.price}</p>
                 </div>
 
                 <p className="product-description">{product.description}</p>
