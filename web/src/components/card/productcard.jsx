@@ -1,29 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const viewDetails = () => {
-    console.log('Added to Cart');
-} 
+const ProductCard = ( {product} ) => {
+    const [viewDetails, setViewDetails] = useState(false);
+    const contentRef = React.useRef(null);
 
-const addToCart = () => {
-    console.log('Added to Cart');
-}
+    const addToCart = () => {
+        console.log('Added to Cart');
+    };
 
-const ProductCard = () => {
     return (
         <div> 
-            <img />
+            <img src={product.image} className="product-image"/>
             <div className="product-content"> 
                 <div className="product-header">
-                    <h3>Test Header</h3>
+                    <h3>{product.name}</h3>
+                    <p>{product.price}</p>
                 </div>
 
-                <p className="product-description">Test Description</p>
+                <p className="product-description">{product.description}</p>
                 <div className="product-details">
-                    <p className="product-details-description">Detailed description</p>
+                    <p className="product-details-description">{product.detailedDescription}</p>
                 </div>
-
                 <div>
-                    <button onClick={viewDetails}>View Details</button>
+                    <button onClick={() => setViewDetails(!viewDetails)}>View Details</button>
                     <button onClick={addToCart}>Add to Cart</button>
                 </div>
 
