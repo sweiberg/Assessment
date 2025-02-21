@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <div>
+        <h1>Product Page</h1>
         <ProductGrid />
       </div>
     </>
